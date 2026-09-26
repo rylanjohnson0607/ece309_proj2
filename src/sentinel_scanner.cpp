@@ -58,3 +58,8 @@ SentinelScanner::Out SentinelScanner::flush() {
 	pending_.clear();
 	return result;
 }
+
+std::size_t SentinelScanner::pending_size() const noexcept 
+{ 
+	return pending_.size(); 
+}

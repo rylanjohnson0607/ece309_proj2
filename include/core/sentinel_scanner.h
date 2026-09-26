@@ -18,6 +18,8 @@ public:
     // being held back.
     Out flush();
 
+    std::size_t pending_size()  const noexcept;
+
 private:
     std::string sentinel_;
     std::string pending_;   // holds back at most sentinel_.size() - 1
