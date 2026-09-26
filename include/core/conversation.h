@@ -1,3 +1,6 @@
+#pragma once
+#include "message.h"
+
 class Conversation {
 public:
     // Empty conversation: size() == 0, no allocation yet.
