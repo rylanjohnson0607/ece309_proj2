@@ -130,10 +130,17 @@ int main()
     // 5. Verify Appending Messages Preserves Their Order And Contents As The Array Grows.
 
     Conversation conv5;
+    size_t old_cap = 1;
 
     for (std::size_t i = 0; i < 100; ++i)
     {
         conv5.append(Message(Role::User, std::to_string(i)));
+        size_t new_cap = conv5.capacity();
+        if (new_cap != old_cap)
+        {
+            assert( new_cap == (old_cap * 2)); //Ensure Growth Factor Is Doubling As Documented
+            old_cap = new_cap;
+        }
         assert(conv5.size() == i + 1);
 
         for (std::size_t j = 0; j <= i; ++j)

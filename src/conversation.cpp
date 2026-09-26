@@ -164,3 +164,8 @@ const Message* Conversation::begin() const noexcept {
 const Message* Conversation::end() const noexcept {
 	return data_ + size_;
 }
+
+std::size_t Conversation::capacity() const noexcept
+{
+	return capacity_;
+}
